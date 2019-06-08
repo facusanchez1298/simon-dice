@@ -41,9 +41,13 @@ namespace SimonDice
         /// <param name="e"></param>
         private void buttonJugar_Click(object sender, EventArgs e)
         {
+            
             timer1.Start();
         }
 
+        /// <summary>
+        /// agrega un numero a la lista entre 1 y 4
+        /// </summary>
         public void agregarAleatorio()
         {
             Random random = new Random();
@@ -71,6 +75,10 @@ namespace SimonDice
             timer2.Stop();
         }
 
+        /// <summary>
+        /// prende el boton que le pasemos
+        /// </summary>
+        /// <param name="boton">numero entre 1 y 4</param>
         public void mostrar(int boton)
         {
             if (boton == 1) btnAzul.BackColor = Color.DodgerBlue;
@@ -79,6 +87,11 @@ namespace SimonDice
             else if (boton == 4) btnRojo.BackColor = Color.IndianRed;
         }
 
+        /// <summary>
+        /// se fija que boton presionamos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Click(object sender, EventArgs e)
         {
             if (!timer1.Enabled)
@@ -102,7 +115,7 @@ namespace SimonDice
                     presionado = 4;
                 }
 
-                if (continuar())
+                if (apretoBien())
                 {
                     if (i < juego.Count - 1) i++;
                     else
@@ -110,6 +123,7 @@ namespace SimonDice
                         agregarAleatorio();
                         i = 0;
                         buttonJugar_Click(sender, e);
+
                     }
                 }
                 else
@@ -119,7 +133,10 @@ namespace SimonDice
                     timer1.Stop();
                     timer2.Stop();
                     juego.Clear();
+                    agregarAleatorio();
                 }
+               
+
             }
         }
 
@@ -131,11 +148,11 @@ namespace SimonDice
                                          MessageBoxIcon.Error);
         }
 
-        public bool continuar()
+        public bool apretoBien()
         {
             return presionado == juego.ElementAt(i);
         }
 
-
+        
     }
 }

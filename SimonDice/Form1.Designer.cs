@@ -42,7 +42,7 @@
             // 
             this.btnAzul.BackColor = System.Drawing.Color.Blue;
             this.btnAzul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAzul.Location = new System.Drawing.Point(166, 40);
+            this.btnAzul.Location = new System.Drawing.Point(122, 11);
             this.btnAzul.Name = "btnAzul";
             this.btnAzul.Size = new System.Drawing.Size(110, 110);
             this.btnAzul.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.btnVerde.BackColor = System.Drawing.Color.Green;
             this.btnVerde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerde.Location = new System.Drawing.Point(166, 260);
+            this.btnVerde.Location = new System.Drawing.Point(122, 231);
             this.btnVerde.Name = "btnVerde";
             this.btnVerde.Size = new System.Drawing.Size(110, 110);
             this.btnVerde.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.btnRojo.BackColor = System.Drawing.Color.Red;
             this.btnRojo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRojo.Location = new System.Drawing.Point(56, 150);
+            this.btnRojo.Location = new System.Drawing.Point(12, 121);
             this.btnRojo.Name = "btnRojo";
             this.btnRojo.Size = new System.Drawing.Size(110, 110);
             this.btnRojo.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.btnAmarrillo.BackColor = System.Drawing.Color.Yellow;
             this.btnAmarrillo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAmarrillo.Location = new System.Drawing.Point(276, 150);
+            this.btnAmarrillo.Location = new System.Drawing.Point(232, 121);
             this.btnAmarrillo.Name = "btnAmarrillo";
             this.btnAmarrillo.Size = new System.Drawing.Size(110, 110);
             this.btnAmarrillo.TabIndex = 3;
@@ -86,12 +86,12 @@
             this.btnAmarrillo.UseVisualStyleBackColor = false;
             this.btnAmarrillo.Click += new System.EventHandler(this.btn_Click);
             // 
-            // buttonJugar
+            // buttonJugar_click
             // 
             this.buttonJugar_click.BackColor = System.Drawing.Color.White;
             this.buttonJugar_click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonJugar_click.Location = new System.Drawing.Point(166, 150);
-            this.buttonJugar_click.Name = "buttonJugar";
+            this.buttonJugar_click.Location = new System.Drawing.Point(122, 121);
+            this.buttonJugar_click.Name = "buttonJugar_click";
             this.buttonJugar_click.Size = new System.Drawing.Size(110, 110);
             this.buttonJugar_click.TabIndex = 0;
             this.buttonJugar_click.Text = "jugar";
@@ -110,17 +110,22 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(428, 411);
+            this.ClientSize = new System.Drawing.Size(354, 356);
             this.Controls.Add(this.btnAmarrillo);
             this.Controls.Add(this.btnRojo);
             this.Controls.Add(this.btnVerde);
             this.Controls.Add(this.buttonJugar_click);
             this.Controls.Add(this.btnAzul);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(370, 395);
+            this.MinimumSize = new System.Drawing.Size(370, 395);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Opacity = 0.95D;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Simon";
             this.ResumeLayout(false);
 
         }

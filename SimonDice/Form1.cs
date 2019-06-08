@@ -12,8 +12,19 @@ namespace SimonDice
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// que boton precionamos?
+        /// </summary>
         int presionado;
+
+        /// <summary>
+        /// aca vamos a cargar el orden de las luces
+        /// </summary>
         List<int> juego = new List<int>();
+
+        /// <summary>
+        /// es el numero que vamos a usar para recorrer la lista
+        /// </summary>
         int i = 0;
 
 
@@ -40,8 +51,7 @@ namespace SimonDice
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonJugar_Click(object sender, EventArgs e)
-        {
-            
+        {            
             timer1.Start();
         }
 
@@ -55,23 +65,34 @@ namespace SimonDice
             juego.Add(random.Next(1,5));
         }
 
+        /// <summary>
+        /// cuando el timer este prendido esto se va a ejecutar cada segundo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             mostrar(juego.ElementAt(i));
 
-            if (i < juego.Count - 1) i++;
+            if (i < juego.Count - 1) i++; //si aun quedan elementos para mostrar pasamos al sgte
             else
             {
+                //sino detenemos todo y volvemos al elemento inicial
                 timer1.Stop();
                 i = 0;
             }
 
-            timer2.Start();
+            timer2.Start(); //apaga la luz que hayamos prendido despues de medio segundo
         }
 
+        /// <summary>
+        /// apaga las luces despues de medio segundo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer2_Tick(object sender, EventArgs e)
         {
-             apagarTodo();
+            apagarTodo();
             timer2.Stop();
         }
 
@@ -140,6 +161,10 @@ namespace SimonDice
             }
         }
 
+        /// <summary>
+        /// muestra un mensaje 
+        /// </summary>
+        /// <param name="mensaje"></param>
         public void mostrarMensaje(string mensaje)
         {
             const string caption = "Fin Del Juego";
@@ -148,6 +173,11 @@ namespace SimonDice
                                          MessageBoxIcon.Error);
         }
 
+
+        /// <summary>
+        /// verifica que el boton apretado se el que tenia que apretar
+        /// </summary>
+        /// <returns></returns>
         public bool apretoBien()
         {
             return presionado == juego.ElementAt(i);
